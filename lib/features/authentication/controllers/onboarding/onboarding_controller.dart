@@ -1,10 +1,7 @@
-import 'dart:developer';
-
 import 'package:apni_dukaan/features/authentication/screens/login/login.dart';
 import 'package:apni_dukaan/utils/logging/logger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();

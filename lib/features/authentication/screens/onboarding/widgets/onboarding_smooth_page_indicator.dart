@@ -22,7 +22,8 @@ class OnBoardingSmoothPageIndicator extends StatelessWidget {
       left: BaseAppSizes.defaultSpace,
       child: SmoothPageIndicator(
         controller: onBoardingController.pageController,
-        onDotClicked: (index) => onBoardingController.dotNavigationClicked,
+        onDotClicked: (index) =>
+            onBoardingController.dotNavigationClicked(index),
         count: 3,
         effect: ExpandingDotsEffect(
             activeDotColor: isDark ? BaseAppColors.light : BaseAppColors.dark,

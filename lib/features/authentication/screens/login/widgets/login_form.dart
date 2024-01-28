@@ -1,5 +1,6 @@
 import 'package:apni_dukaan/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:apni_dukaan/features/authentication/screens/register/register.dart';
+import 'package:apni_dukaan/navigation_menu.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:apni_dukaan/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,9 @@ class LoginFormSection extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(
+                  () => const NavigationMenu(),
+                ),
                 child: const Text(
                   BasicTexts.signIn,
                 ),
