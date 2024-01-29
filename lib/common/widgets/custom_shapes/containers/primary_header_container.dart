@@ -17,21 +17,21 @@ class ADPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: BaseAppColors.primary,
         child: SizedBox(
-          height: 300,
+          height: 380,
 
           ///If [Size.isFinite error occurred..] try to add some Widget like Container()...
           child: Stack(
             children: [
               ///Background Custom Shapes..
               Positioned(
-                top: -150,
+                top: -100,
                 right: -150,
                 child: ADCircularContainer(
                   backGroundColor: BaseAppColors.textWhite.withOpacity(0.1),
                 ),
               ),
               Positioned(
-                top: 50,
+                top: 100,
                 right: -200,
                 child: ADCircularContainer(
                   backGroundColor: BaseAppColors.textWhite.withOpacity(0.1),
