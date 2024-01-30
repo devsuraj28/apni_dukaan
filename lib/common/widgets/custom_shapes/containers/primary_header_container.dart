@@ -17,8 +17,6 @@ class ADPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: BaseAppColors.primary,
         child: SizedBox(
-          height: 380,
-
           ///If [Size.isFinite error occurred..] try to add some Widget like Container()...
           child: Stack(
             children: [

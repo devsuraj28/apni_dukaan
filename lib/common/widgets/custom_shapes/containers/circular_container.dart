@@ -10,6 +10,7 @@ class ADCircularContainer extends StatelessWidget {
     this.backGroundColor = BaseAppColors.white,
     this.radius = 300,
     this.padding = 0,
+    this.margin,
     this.child,
   });
 
@@ -18,6 +19,7 @@ class ADCircularContainer extends StatelessWidget {
   final Color backGroundColor;
   final double radius;
   final double padding;
+  final EdgeInsets? margin;
   final Widget? child;
 
   @override
@@ -26,6 +28,7 @@ class ADCircularContainer extends StatelessWidget {
       width: width,
       height: height,
       padding: EdgeInsets.all(padding),
+      margin: margin,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backGroundColor,

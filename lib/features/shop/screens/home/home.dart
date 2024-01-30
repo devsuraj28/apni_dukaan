@@ -2,11 +2,12 @@ import 'package:apni_dukaan/common/widgets/custom_shapes/containers/primary_head
 import 'package:apni_dukaan/common/widgets/custom_shapes/containers/searchbar_container.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_section_heading.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
+import 'package:apni_dukaan/utils/constants/image_strings.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
+import 'widgets/home_promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
     return const Scaffold(
       body: Column(
         children: [
-          ///Header with Primary Color Background and Clipper Path Class for Custom Path Shape...
+          ///--------Header with Primary Color Background and Clipper Path Class for Custom Path Shape...------
           ADPrimaryHeaderContainer(
             child: Column(
               children: [
@@ -24,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                 ADHomeAppBar(),
 
                 SizedBox(
-                  height: BaseAppSizes.spaceBtwSections,
+                  height: BaseAppSizes.spaceBtwSections / 2,
                 ),
 
                 ///Search Bar
@@ -57,6 +58,24 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+
+                SizedBox(
+                  height: BaseAppSizes.spaceBtwSections * 1.5,
+                ),
+              ],
+            ),
+          ),
+
+          ///---Body Section-----------
+
+          ///Promotion Slider
+          Padding(
+            padding: EdgeInsets.all(BaseAppSizes.defaultSpace),
+            child: ADPromoSlider(
+              banners: [
+                BaseAppImages.promoBanner1,
+                BaseAppImages.promoBanner2,
+                BaseAppImages.promoBanner3
               ],
             ),
           ),
