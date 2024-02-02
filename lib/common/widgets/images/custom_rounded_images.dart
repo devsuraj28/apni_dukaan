@@ -12,7 +12,7 @@ class ADRoundedImage extends StatelessWidget {
     this.border,
     this.borderRadius = BaseAppSizes.md,
     this.backgroundColor = BaseAppColors.light,
-    this.boxFit,
+    this.boxFit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
     this.onTap,
