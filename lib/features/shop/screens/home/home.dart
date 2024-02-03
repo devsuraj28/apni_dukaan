@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                   ///Popular Products
                   const CustomSectionHeading(title: 'Popular Products'),
                   const SizedBox(
-                    height: BaseAppSizes.spaceBtwSections / 2,
+                    height: BaseAppSizes.spaceBtwItems,
                   ),
                   ADGridLayout(
                     itemCount: 2,

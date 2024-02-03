@@ -12,10 +12,13 @@ class ADSearchBar extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.showBackGround = true,
     this.showBorder = true,
+    this.padding =
+        const EdgeInsets.symmetric(horizontal: BaseAppSizes.defaultSpace),
   });
 
   final String hintText;
   final IconData? icon;
+  final EdgeInsetsGeometry padding;
   final bool showBackGround, showBorder;
 
   @override
@@ -23,16 +26,15 @@ class ADSearchBar extends StatelessWidget {
     final isDark = BaseAppHelperFunctions.isDarkMode(context);
 
     return Padding(
-      padding:
-      const EdgeInsets.symmetric(horizontal: BaseAppSizes.defaultSpace),
+      padding: padding,
       child: Container(
         padding: const EdgeInsets.all(BaseAppSizes.md),
         width: TDeviceUtils.getScreenWidth(context),
         decoration: BoxDecoration(
           color: showBackGround
               ? isDark
-              ? BaseAppColors.dark
-              : BaseAppColors.light
+                  ? BaseAppColors.dark
+                  : BaseAppColors.light
               : Colors.transparent,
           borderRadius: BorderRadius.circular(BaseAppSizes.cardRadiusLg),
           border: showBorder ? Border.all(color: BaseAppColors.grey) : null,

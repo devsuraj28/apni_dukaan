@@ -1,31 +1,27 @@
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
+import 'package:apni_dukaan/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-class ADRoundedImage extends StatelessWidget {
-  const ADRoundedImage({
+class ADCircularImage extends StatelessWidget {
+  const ADCircularImage({
     super.key,
-    this.width,
-    this.height,
+    this.width = 56,
+    this.height = 56,
     required this.imageUrl,
-    this.applyImageRadius = true,
-    this.border,
-    this.borderRadius = BaseAppSizes.md,
     this.backgroundColor,
     this.boxFit = BoxFit.contain,
-    this.padding,
+    this.padding = BaseAppSizes.sm,
     this.isNetworkImage = false,
-    this.onTap,
+    this.onTap, this.overlay,
   });
 
-  final double? width, height;
+  final double width, height,padding;
   final String imageUrl;
-  final bool applyImageRadius;
-  final BoxBorder? border;
-  final double borderRadius;
   final Color? backgroundColor;
+  final Color? overlay;
   final BoxFit? boxFit;
-  final EdgeInsetsGeometry? padding;
+
   final bool isNetworkImage;
   final VoidCallback? onTap;
 
@@ -36,16 +32,12 @@ class ADRoundedImage extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: padding,
+        padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
-          border: border,
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(borderRadius),
+          color: backgroundColor ?? (BaseAppHelperFunctions.isDarkMode(context) ? BaseAppColors.black : BaseAppColors.white),
+          borderRadius: BorderRadius.circular(100),
         ),
-        child: ClipRRect(
-          borderRadius: applyImageRadius
-              ? BorderRadius.circular(BaseAppSizes.md)
-              : BorderRadius.zero,
+        child: Center(
           child: Image(
               image: isNetworkImage
                   ? NetworkImage(imageUrl)

@@ -11,6 +11,8 @@ import 'package:apni_dukaan/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../texts/custom_brand_title_text_with_verified_icon.dart';
+
 class ADProductVerticalCards extends StatelessWidget {
   const ADProductVerticalCards({super.key});
 
@@ -30,6 +32,7 @@ class ADProductVerticalCards extends StatelessWidget {
           color: isDark ? BaseAppColors.darkerGrey : BaseAppColors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ///Thumbnail, Wishlist Button, Discount Tag
             ADRoundedContainer(
@@ -81,64 +84,51 @@ class ADProductVerticalCards extends StatelessWidget {
             ),
 
             ///--Details
-            Padding(
-              padding: const EdgeInsets.only(left: BaseAppSizes.sm),
+             const Padding(
+              padding: EdgeInsets.only(left: BaseAppSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ADProductTitleText(
+                  ADProductTitleText(
                     title: 'Green Nike Air Shoe',
                     smallSize: true,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: BaseAppSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: BaseAppSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: BaseAppColors.primary,
-                        size: BaseAppSizes.iconXs,
-                      )
-                    ],
-                  ),
-
-                  // Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ///Price
-                      const ADProductPriceText(price: '28.0'),
-
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: BaseAppColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(BaseAppSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                                BaseAppSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: BaseAppSizes.iconLg * 1.2,
-                          height: BaseAppSizes.iconLg * 1.2,
-                          child: Icon(
-                            Iconsax.add,
-                            color: BaseAppColors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                  ADBrandTitleTextsWithVerifyIcon(title: 'Nike'),
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ///Price
+                const Padding(
+                  padding: EdgeInsets.only(left: BaseAppSizes.sm),
+                  child: ADProductPriceText(price: '28.0'),
+                ),
+
+                Container(
+                  decoration: const BoxDecoration(
+                    color: BaseAppColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(BaseAppSizes.cardRadiusMd),
+                      bottomRight:
+                          Radius.circular(BaseAppSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: BaseAppSizes.iconLg * 1.2,
+                    height: BaseAppSizes.iconLg * 1.2,
+                    child: Icon(
+                      Iconsax.add,
+                      color: BaseAppColors.white,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
