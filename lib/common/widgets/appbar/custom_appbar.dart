@@ -7,14 +7,14 @@ import 'package:iconsax/iconsax.dart';
 class ADCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ADCustomAppBar({
     super.key,
-    this.showAppBar = false,
+    this.showBackArrow = false,
     this.title,
     this.leadingIcon,
     this.leadingOnPressed,
     this.actions,
   });
 
-  final bool showAppBar;
+  final bool showBackArrow;
   final Widget? title;
   final IconData? leadingIcon;
   final VoidCallback? leadingOnPressed;
@@ -26,7 +26,7 @@ class ADCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: BaseAppSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
-        leading: showAppBar
+        leading: showBackArrow
             ? IconButton(
                 icon: const Icon(Iconsax.arrow_left),
                 onPressed: () => Get.back())

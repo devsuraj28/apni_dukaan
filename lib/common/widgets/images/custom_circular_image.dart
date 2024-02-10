@@ -13,10 +13,11 @@ class ADCircularImage extends StatelessWidget {
     this.boxFit = BoxFit.contain,
     this.padding = BaseAppSizes.sm,
     this.isNetworkImage = false,
-    this.onTap, this.overlay,
+    this.onTap,
+    this.overlay,
   });
 
-  final double width, height,padding;
+  final double width, height, padding;
   final String imageUrl;
   final Color? backgroundColor;
   final Color? overlay;
@@ -34,7 +35,10 @@ class ADCircularImage extends StatelessWidget {
         height: height,
         padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
-          color: backgroundColor ?? (BaseAppHelperFunctions.isDarkMode(context) ? BaseAppColors.black : BaseAppColors.white),
+          color: backgroundColor ??
+              (BaseAppHelperFunctions.isDarkMode(context)
+                  ? BaseAppColors.black
+                  : BaseAppColors.white),
           borderRadius: BorderRadius.circular(100),
         ),
         child: Center(
@@ -42,7 +46,10 @@ class ADCircularImage extends StatelessWidget {
               image: isNetworkImage
                   ? NetworkImage(imageUrl)
                   : AssetImage(imageUrl) as ImageProvider,
-              fit: boxFit),
+              fit: boxFit,
+              color: BaseAppHelperFunctions.isDarkMode(context)
+                  ? BaseAppColors.white
+                  : BaseAppColors.black),
         ),
       ),
     );

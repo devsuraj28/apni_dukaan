@@ -3,7 +3,6 @@ import 'package:apni_dukaan/common/widgets/products/carts/custom_cart_counter_ic
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ADHomeAppBar extends StatelessWidget {
   const ADHomeAppBar({
