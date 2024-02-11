@@ -67,15 +67,28 @@ class HomeScreen extends StatelessWidget {
           ),
 
           ///---Body Section-----------
-
           ///Promotion Slider
           Padding(
             padding: EdgeInsets.all(BaseAppSizes.defaultSpace),
-            child: ADPromoSlider(
-              banners: [
-                BaseAppImages.promoBanner1,
-                BaseAppImages.promoBanner2,
-                BaseAppImages.promoBanner3
+            child: Column(
+              children: [
+                ///Promotion Banners Slider
+                ADPromoSlider(
+                  banners: [
+                    BaseAppImages.promoBanner1,
+                    BaseAppImages.promoBanner2,
+                    BaseAppImages.promoBanner3
+                  ],
+                ),
+
+                SizedBox(
+                  height: BaseAppSizes.spaceBtwSections,
+                ),
+
+                CustomSectionHeading(
+                  title: 'Popular Products',
+                  showActionButton: true,
+                ),
               ],
             ),
           ),
