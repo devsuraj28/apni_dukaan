@@ -1,5 +1,5 @@
+import 'package:apni_dukaan/features/personalization/screens/settings/settings.dart';
 import 'package:apni_dukaan/features/shop/screens/home/home.dart';
-import 'package:apni_dukaan/features/shop/screens/profile/profile.dart';
 import 'package:apni_dukaan/features/shop/screens/store/store.dart';
 import 'package:apni_dukaan/features/shop/screens/wishlist/wishlist.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
@@ -51,7 +51,7 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const StoreScreen(),
     const WishListScreen(),
-    const ProfileScreen(),
+    const SettingsScreen(),
   ];
 
   ///update Navigation Index

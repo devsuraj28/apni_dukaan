@@ -14,6 +14,7 @@ class CustomSocialIconSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
+          padding: const EdgeInsets.all(BaseAppSizes.xs),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
             border: Border.all(color: BaseAppColors.grey),
@@ -28,6 +29,7 @@ class CustomSocialIconSection extends StatelessWidget {
           width: BaseAppSizes.spaceBtwItems,
         ),
         Container(
+          padding: const EdgeInsets.all(BaseAppSizes.xs),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
             border: Border.all(color: BaseAppColors.grey),

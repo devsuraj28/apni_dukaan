@@ -20,3 +20,11 @@ flutter_native_splash:
   #--------------------------To remove Flutter Native Splash -----------------#
   #--------------------------Run below Command to terminal   -----------------#
   #--flutter pub run flutter_native_splash:remove            -----------------#
+
+  #--------------------------To Fix Flutter Files  -----------------#
+  #-- dart fix --dry-run--------------------------------------------#
+
+  #--------------------------To Remove Unused Imports from Files  -----------------#
+  #-- dart fix --apply --code=unused_import----------------------------------------#
+  #--------------------------For overall file fixes  -----------------#
+  #-- dart fix --apply ----------------------------------------#
