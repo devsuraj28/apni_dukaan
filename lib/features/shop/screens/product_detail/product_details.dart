@@ -1,8 +1,10 @@
-import 'package:apni_dukaan/features/shop/screens/products/widget/bottom_add_to_cart.dart';
-import 'package:apni_dukaan/features/shop/screens/products/widget/product_attributes.dart';
-import 'package:apni_dukaan/features/shop/screens/products/widget/product_meta_data.dart';
+import 'package:apni_dukaan/features/shop/screens/product_detail/widget/bottom_add_to_cart.dart';
+import 'package:apni_dukaan/features/shop/screens/product_detail/widget/product_attributes.dart';
+import 'package:apni_dukaan/features/shop/screens/product_detail/widget/product_meta_data.dart';
+import 'package:apni_dukaan/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import '../../../../common/widgets/texts/custom_section_heading.dart';
@@ -88,7 +90,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         showActionButton: false,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const ProductReviews()),
                         icon: const Icon(
                           Iconsax.arrow_right_3,
                           size: 18,

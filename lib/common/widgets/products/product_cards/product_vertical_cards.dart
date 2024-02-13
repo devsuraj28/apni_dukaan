@@ -4,7 +4,7 @@ import 'package:apni_dukaan/common/widgets/icons/custom_circular_icon.dart';
 import 'package:apni_dukaan/common/widgets/images/custom_rounded_images.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_product_price_text.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_product_title_text.dart';
-import 'package:apni_dukaan/features/shop/screens/products/product_details.dart';
+import 'package:apni_dukaan/features/shop/screens/product_detail/product_details.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/image_strings.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
