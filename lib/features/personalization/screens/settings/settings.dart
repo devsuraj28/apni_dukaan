@@ -4,6 +4,8 @@ import 'package:apni_dukaan/common/widgets/listtile/settings_menu_tile.dart';
 import 'package:apni_dukaan/common/widgets/listtile/user_profile_tile.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_section_heading.dart';
 import 'package:apni_dukaan/features/personalization/screens/profile/profile.dart';
+import 'package:apni_dukaan/features/shop/screens/cart/cart.dart';
+import 'package:apni_dukaan/features/shop/screens/order/order.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -71,13 +73,13 @@ class SettingsScreen extends StatelessWidget {
                       title: "My Cart",
                       subTitle: "Add, remove products and move to checkout",
                       icon: Iconsax.shopping_cart,
-                      onTap: () {}),
+                      onTap: () => Get.to(() => const CartScreen())),
 
                   SettingsMenuTile(
                       title: "My Orders",
                       subTitle: "In-progress and completed orders",
                       icon: Iconsax.bag_tick,
-                      onTap: () {}),
+                      onTap: () => Get.to(() => const OrderScreen())),
 
                   SettingsMenuTile(
                       title: "Bank Accounts",
