@@ -112,6 +112,7 @@ class ADProductVerticalCards extends StatelessWidget {
                   child: ADProductPriceText(price: '28.0'),
                 ),
 
+                ///Add to Cart
                 Container(
                   decoration: const BoxDecoration(
                     color: BaseAppColors.dark,

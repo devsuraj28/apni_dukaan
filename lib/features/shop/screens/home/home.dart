@@ -7,6 +7,8 @@ import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/image_strings.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../all_products/all_products.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 import 'widgets/home_promo_slider.dart';
@@ -89,7 +91,12 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   ///Popular Products
-                  const CustomSectionHeading(title: 'Popular Products'),
+                  CustomSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () => Get.to(
+                      () => const AllProducts(),
+                    ),
+                  ),
                   const SizedBox(
                     height: BaseAppSizes.spaceBtwItems,
                   ),

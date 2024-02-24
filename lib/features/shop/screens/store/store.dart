@@ -5,10 +5,12 @@ import 'package:apni_dukaan/common/widgets/custom_shapes/containers/searchbar_co
 import 'package:apni_dukaan/common/widgets/layout/grid_layout.dart';
 import 'package:apni_dukaan/common/widgets/products/carts/custom_cart_counter_icon.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_section_heading.dart';
+import 'package:apni_dukaan/features/shop/screens/brands/all_brands.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:apni_dukaan/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'widgets/categories_tab.dart';
 
@@ -61,8 +63,7 @@ class StoreScreen extends StatelessWidget {
                       ///Featured Brands
                       CustomSectionHeading(
                         title: 'Featured Brands',
-                        // showActionButton: true,
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const AllBrandsScreen()),
                       ),
                       const SizedBox(
                         height: BaseAppSizes.spaceBtwItems / 1.5,
@@ -113,5 +114,3 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
-
-
