@@ -1,10 +1,14 @@
 import 'package:apni_dukaan/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:apni_dukaan/common/widgets/custom_shapes/containers/searchbar_container.dart';
+import 'package:apni_dukaan/common/widgets/layout/grid_layout.dart';
+import 'package:apni_dukaan/common/widgets/products/product_cards/product_vertical_cards.dart';
 import 'package:apni_dukaan/common/widgets/texts/custom_section_heading.dart';
 import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/image_strings.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../all_products/all_products.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 import 'widgets/home_promo_slider.dart';
@@ -14,72 +18,97 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          ///--------Header with Primary Color Background and Clipper Path Class for Custom Path Shape...------
-          ADPrimaryHeaderContainer(
-            child: Column(
-              children: [
-                ///Custom AppBar
-                ADHomeAppBar(),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ///--------Header with Primary Color Background and Clipper Path Class for Custom Path Shape...------
+            const ADPrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  ///Custom AppBar
+                  ADHomeAppBar(),
 
-                SizedBox(
-                  height: BaseAppSizes.spaceBtwSections / 2,
-                ),
+                  SizedBox(
+                    height: BaseAppSizes.spaceBtwSections / 2,
+                  ),
 
-                ///Search Bar
-                ADSearchBar(
-                  hintText: 'Search in Store',
-                ),
+                  ///Search Bar
+                  ADSearchBar(
+                    hintText: 'Search in Store',
+                  ),
 
-                SizedBox(
-                  height: BaseAppSizes.spaceBtwSections,
-                ),
+                  SizedBox(
+                    height: BaseAppSizes.spaceBtwSections,
+                  ),
 
-                ///Categories
-                Padding(
-                  padding: EdgeInsets.only(left: BaseAppSizes.defaultSpace),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomSectionHeading(
-                        title: 'Popular Categories',
-                        showActionButton: false,
-                        textColor: BaseAppColors.white,
-                      ),
+                  ///Categories
+                  Padding(
+                    padding: EdgeInsets.only(left: BaseAppSizes.defaultSpace),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomSectionHeading(
+                          title: 'Popular Categories',
+                          showActionButton: false,
+                          textColor: BaseAppColors.white,
+                        ),
 
-                      SizedBox(
-                        height: BaseAppSizes.spaceBtwItems,
-                      ),
+                        SizedBox(
+                          height: BaseAppSizes.spaceBtwItems,
+                        ),
 
-                      ///Categories List
-                      ADHomeCategories()
+                        ///Categories List
+                        ADHomeCategories()
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: BaseAppSizes.spaceBtwSections,
+                  ),
+                ],
+              ),
+            ),
+
+            ///---Body Section-----------
+
+            Padding(
+              padding: const EdgeInsets.all(BaseAppSizes.defaultSpace),
+              child: Column(
+                children: [
+                  ///Promotion Banner Slider
+                  const ADPromoSlider(
+                    banners: [
+                      BaseAppImages.promoBanner1,
+                      BaseAppImages.promoBanner2,
+                      BaseAppImages.promoBanner3
                     ],
                   ),
-                ),
 
-                SizedBox(
-                  height: BaseAppSizes.spaceBtwSections * 1.5,
-                ),
-              ],
+                  const SizedBox(
+                    height: BaseAppSizes.spaceBtwSections,
+                  ),
+
+                  ///Popular Products
+                  CustomSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () => Get.to(
+                      () => const AllProducts(),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: BaseAppSizes.spaceBtwItems,
+                  ),
+                  ADGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (p0, p1) => const ADProductVerticalCards(),
+                  )
+                ],
+              ),
             ),
-          ),
-
-          ///---Body Section-----------
-
-          ///Promotion Slider
-          Padding(
-            padding: EdgeInsets.all(BaseAppSizes.defaultSpace),
-            child: ADPromoSlider(
-              banners: [
-                BaseAppImages.promoBanner1,
-                BaseAppImages.promoBanner2,
-                BaseAppImages.promoBanner3
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

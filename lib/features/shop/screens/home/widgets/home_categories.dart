@@ -1,6 +1,8 @@
 import 'package:apni_dukaan/common/widgets/image_text_widget/vertical_image_texts.dart';
+import 'package:apni_dukaan/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:apni_dukaan/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ADHomeCategories extends StatelessWidget {
   const ADHomeCategories({
@@ -19,7 +21,9 @@ class ADHomeCategories extends StatelessWidget {
           return ADVerticalImageText(
             text: 'Shoes',
             image: BaseAppImages.shoeIcon,
-            onTap: () {},
+            onTap: () => Get.to(
+              () => const SubCategoriesScreen(),
+            ),
           );
         },
       ),

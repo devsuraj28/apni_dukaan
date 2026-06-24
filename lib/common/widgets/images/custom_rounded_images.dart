@@ -1,4 +1,3 @@
-import 'package:apni_dukaan/utils/constants/colors.dart';
 import 'package:apni_dukaan/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +10,8 @@ class ADRoundedImage extends StatelessWidget {
     this.applyImageRadius = true,
     this.border,
     this.borderRadius = BaseAppSizes.md,
-    this.backgroundColor = BaseAppColors.light,
-    this.boxFit,
+    this.backgroundColor,
+    this.boxFit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
     this.onTap,
@@ -23,7 +22,7 @@ class ADRoundedImage extends StatelessWidget {
   final bool applyImageRadius;
   final BoxBorder? border;
   final double borderRadius;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? boxFit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
